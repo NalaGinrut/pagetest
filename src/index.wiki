@@ -1,3 +1,4 @@
 ((title . "index"))
 
 hey! welcome to NalaGinrut's wiki
+This page was generated with Hyde of Chicken Scheme.
