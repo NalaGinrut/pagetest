@@ -1,0 +1,8 @@
+()
+`((xhtml-1.0-strict)
+  (html
+   (head
+    (title ,($ 'title)))
+   (body
+    (h1 ,($ 'title))
+    (inject ,contents))))
