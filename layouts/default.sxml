@@ -2,7 +2,31 @@
 `((xhtml-1.0-strict)
   (html
    (head
-    (title ,($ 'title)))
+    (title ,($ 'title))
+    (meta (@ (http-equiv "Content-Style-Type") (content "text/css")))
+    (meta (@ (http-equiv "Content-Type") (content "text/html; charset=utf-8")))
+    (link (@ (href "css/highlight.css") (rel "stylesheet") (type "text/css")))
+    (link (@ (href "css/common.css") (rel "stylesheet") (type "text/css"))))     
    (body
-    (h1 ,($ 'title))
-    (inject ,contents))))
+    (div (@ (id "side"))
+     (div (@ (class "wrap"))
+      (h1 "Artanis home")
+      (h2 (@ (id "slogan")) "A lightweight web-framework of Scheme")
+      (ul (@ (id "links"))
+       (li (a (@ (href "index.html") (class "active")) "Home"))
+       (li (a (@ (href "about.html")) "About"))
+       (li (a (@ (href "docs/index.html")) "Documents"))
+       (li (a (@ (href "contribute.html")) "Contribute"))
+       (li (@ (class "last")) (a (@ (href "donate.html")) "Donate")))))
+    (div (@ (id "main") (class "home"))
+     (div (@ (class "wrap")) (pre (code (inject ,contents))))
+     (br)(br)(br)(br)(br)
+     (p (@ (class "foot up"))
+        "Source: "
+        (a (@ (href "http://github.com/NalaGinrut/artanis")) "Artanis ")
+        "powered by " (a (@ (href "http://www.gnu.org/software/guile/")) "GNU Guile ")
+        "This page is Powered by " (a (@ (href "http://wiki.call-cc.org/eggref/4/hyde")) "Hyde of Chicken Scheme")))
+    ;; fork me on github
+    (a (@ (id "forkme") (href "http://github.com/NalaGinrut/artanis")) "Fork me on Github")
+
+    )))
